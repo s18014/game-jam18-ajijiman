@@ -59,11 +59,4 @@ public class Player : MonoBehaviour {
     }
     */
 
-    void changeWeapon ()
-    {
-        if (Input.GetMouseButtonUp(0))
-        {
-
-        }
-    }
 }

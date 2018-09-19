@@ -7,7 +7,6 @@ public class Pizza : MonoBehaviour {
     public float speed;
     public float chageTime;
     float gravity = 9.81f;
-    SpriteRenderer sprinteRenderer;
     Rigidbody2D rig;
     Vector2 target = Vector2.zero;
     Vector2 Target
@@ -18,8 +17,6 @@ public class Pizza : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        sprinteRenderer = GetComponent<SpriteRenderer>();
-        rig = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
@@ -30,7 +27,7 @@ public class Pizza : MonoBehaviour {
     IEnumerator move ()
     {
         firstMove();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         secondMove();
     }
 
@@ -56,15 +53,15 @@ public class Pizza : MonoBehaviour {
 
     public void shot(Vector2 target)
     {
+        rig = GetComponent<Rigidbody2D>();
         this.target = target;
         StartCoroutine("move");
     }
 
     void fall ()
     {
-        Vector2 pos = new Vector2(0f, 0f);
+        Vector2 pos = Vector2.zero;
         pos.y = gravity * Time.deltaTime;
         rig.velocity -= pos;
-        Debug.Log(gravity);
     }
 }
