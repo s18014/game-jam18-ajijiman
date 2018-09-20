@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Dango : MonoBehaviour {
-    public float power;
-    public float speed;
-    public float chageTime;
+    Bullet bullet;
+    float speed;
     Rigidbody2D rig;
+    Vector2 target;
 
 	// Use this for initialization
 	void Start () {
-
+        target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        shot();
 	}
 	
 	// Update is called once per frame
@@ -18,8 +19,10 @@ public class Dango : MonoBehaviour {
 		
 	}
 
-    public void shot(Vector2 target)
+    void shot()
     {
+        bullet = GetComponent<Bullet>();
+        speed = bullet.speed;
         rig = GetComponent<Rigidbody2D>();
         Vector2 pos = transform.position;
         Vector2 direction = target - pos;

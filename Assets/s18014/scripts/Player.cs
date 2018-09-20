@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-    public float speed = 10f;
+    public float speed;
     public int hp;
-    int equip = 0;
     Vector2 min;
     Vector2 max;
 
 	// Use this for initialization
 	void Start () {
-    // bullet = GetComponent<BulletManager>();
 	}
 	
 	// Update is called once per frame
@@ -22,7 +20,6 @@ public class Player : MonoBehaviour {
     private void FixedUpdate()
     {
         move();
-     //   shot();
     }
 
     void move ()
@@ -41,24 +38,4 @@ public class Player : MonoBehaviour {
         pos.y = Mathf.Clamp(pos.y, min.y + size.y, max.y - size.y);
         transform.position = pos;
     }
-
-    /*
-    void shot () {
-        if (Input.GetKey(KeyCode.X))
-        {
-            bullet.equip = 0;
-            bullet.shot(transform);
-        }
-        if (Input.GetKey(KeyCode.Z)) {
-            bullet.equip = 1;
-            bullet.shot(transform);
-        }
-        if (Input.GetKey(KeyCode.C))
-        {
-            bullet.equip = 2;
-            bullet.shot(transform);
-        }
-    }
-    */
-
 }

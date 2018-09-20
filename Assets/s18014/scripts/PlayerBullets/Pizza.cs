@@ -3,20 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Pizza : MonoBehaviour {
-    public float power;
-    public float speed;
-    public float chageTime;
+    Bullet bullet;
+    float speed;
     float gravity = 9.81f;
     Rigidbody2D rig;
-    Vector2 target = Vector2.zero;
-    Vector2 Target
-    {
-        set { target = value; }
-    }
+    Vector2 target;
 
 
 	// Use this for initialization
 	void Start () {
+        target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        shot();
 	}
 	
 	// Update is called once per frame
@@ -33,7 +30,7 @@ public class Pizza : MonoBehaviour {
 
     void firstMove()
     {
-        float angle = 75f;
+        float angle = 45f;
         Vector2 dirction = Vector2.zero; 
         dirction.x = Mathf.Cos(Mathf.Deg2Rad * angle); 
         dirction.y = Mathf.Sin(Mathf.Deg2Rad * angle);
@@ -51,10 +48,11 @@ public class Pizza : MonoBehaviour {
         rig.velocity = direction * speed;
     }
 
-    public void shot(Vector2 target)
+    public void shot()
     {
+        bullet = GetComponent<Bullet>();
+        speed = bullet.speed;
         rig = GetComponent<Rigidbody2D>();
-        this.target = target;
         StartCoroutine("move");
     }
 
