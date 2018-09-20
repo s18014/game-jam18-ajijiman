@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
-    public float power;
-    public float speed;
-    public float chageTime;
 
 	// Use this for initialization
 	void Start ()
@@ -25,5 +22,4 @@ public class Bullet : MonoBehaviour {
             Destroy(gameObject);
         }
     }
-
 }

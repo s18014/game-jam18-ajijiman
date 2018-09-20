@@ -1,62 +1,51 @@
-﻿/*
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletManager : MonoBehaviour {
-    public GameObject[] bullets;
-    public int equip;
-    float[] coolTimes;
-    float[] lapTimes;
-    bool[] isShotables;
+    public GameObject dangoPrefab;
+    public GameObject pizzaPrefab;
+    public GameObject meatBunPrefab;
+    int equip = 0;
+    Vector2 target;
 
 	// Use this for initialization
 	void Start () {
-        coolTimes = new float[bullets.Length];
-        lapTimes = new float[bullets.Length];
-        isShotables = new bool[bullets.Length];
-        for (int i = 0; i < bullets.Length; i++) {
-            Debug.Log(bullets[i].GetComponent<Bullet>());
-            lapTimes[i] = 0f;
-            isShotables[i] = true;
-            coolTimes[i] = bullets[i].GetComponent<Bullet>().coolTime;
-        }
-    }
 
-    // Update is called once per frame
-    void Update () {
+	}
+	
+	// Update is called once per frame
+	void Update () {
+        changeFoods();
+        shot();
 		
 	}
 
-    private void FixedUpdate()
-    {
-        isShotable();
-    }
-
-    public void shot (Transform origin) {
-        // 弾を撃つ
-        if (!isShotables[equip]) {
-            return;
+    void shot () {
+        if (Input.GetMouseButtonDown(0)) {
+            target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
-        Instantiate(
-            bullets[equip],
-            origin.transform.position,
-            Quaternion.identity
-        );
-        lapTimes[equip] = 0f;
-        isShotables[equip] = false;
-    }
-
-    void isShotable () {
-        // クールタイムの状態をチェック
-        for (int i = 0; i < bullets.Length; i++)
-        {
-            lapTimes[i] += Time.deltaTime;
-            if (lapTimes[i] >= coolTimes[i]) {
-                isShotables[i] = true;
+        if (Input.GetMouseButtonUp(0))  {
+            if (equip == 0) {
+                GameObject dango = Instantiate(dangoPrefab, transform.position, Quaternion.identity);
+                dango.GetComponent<Dango>().shot(target);
+            }
+            if (equip == 1) {
+                GameObject pizza = Instantiate(pizzaPrefab, transform.position, Quaternion.identity);
+                pizza.GetComponent<Pizza>().shot(target);
+            }
+            if (equip == 2)
+            {
+                GameObject meatBun = Instantiate(meatBunPrefab, transform.position, Quaternion.identity);
+                meatBun.GetComponent<MeatBun>().shot(target);
             }
         }
+    }
 
+    void changeFoods() {
+        if (Input.GetMouseButtonDown(1)) {
+            equip += 1;
+            if (equip > 2) equip = 0;
+        }
     }
 }
-*/

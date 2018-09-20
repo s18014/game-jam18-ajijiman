@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
     public float speed = 10f;
+    public int hp;
     int equip = 0;
     Vector2 min;
     Vector2 max;
@@ -60,11 +61,4 @@ public class Player : MonoBehaviour {
     }
     */
 
-    void changeWeapon ()
-    {
-        if (Input.GetMouseButtonUp(0))
-        {
-
-        }
-    }
 }

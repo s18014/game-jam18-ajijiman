@@ -6,7 +6,7 @@ public class FixedAspectRatio : MonoBehaviour {
     public float width = 1600f;
     public float height = 900f;
     Camera cam;
-    Rect rect;
+    Rect rect = new Rect();
     float targetAspect;
     float curAspect;
     float ratio;

@@ -10,7 +10,7 @@ public class Dango : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        rig = GetComponent<Rigidbody2D>();
+
 	}
 	
 	// Update is called once per frame
@@ -20,6 +20,7 @@ public class Dango : MonoBehaviour {
 
     public void shot(Vector2 target)
     {
+        rig = GetComponent<Rigidbody2D>();
         Vector2 pos = transform.position;
         Vector2 direction = target - pos;
         direction.Normalize();
