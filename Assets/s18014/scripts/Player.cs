@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
     public float speed = 10f;
+    int equip = 0;
     Vector2 min;
     Vector2 max;
 

@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BulletManager2 : MonoBehaviour {
     public GameObject[] bullets;
-    int equip = 1;
+    int equip = 0;
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
@@ -18,5 +18,6 @@ public class BulletManager2 : MonoBehaviour {
 
     void shot(Vector2 pos)
     {
+        bullets[equip]
     }
 }
