@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4835299648560346}
   - component: {fileID: 212890731972204620}
-  - component: {fileID: 61819453066979126}
+  - component: {fileID: 58942214685578648}
   - component: {fileID: 50672223749011626}
   - component: {fileID: 114897573582612082}
   - component: {fileID: 114995045280262876}
@@ -39,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1067293995192000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -58,14 +58,14 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61819453066979126
-BoxCollider2D:
+--- !u!58 &58942214685578648
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -77,18 +77,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
-  m_EdgeRadius: 0
+  m_Radius: 0.48
 --- !u!114 &114897573582612082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeae421a5d1fc0c428643c3063f69dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RangeOfAngle: 10
 --- !u!114 &114995045280262876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,10 +102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2165e2f84a648b4885f6997789d5f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 0
-  speed: 10
-  angry: 0
-  deray: 0.1
+  power: 3
+  speed: 30
+  angry: 3
+  deray: 0
 --- !u!212 &212890731972204620
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -150,7 +141,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: d9570b0d935ab4553b0c2ed2e60c94fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

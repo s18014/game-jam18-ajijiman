@@ -24,8 +24,10 @@ public class Player : MonoBehaviour {
 
     void move ()
     {
+        float diffY = 96f / 720f;
         min = Camera.main.ViewportToWorldPoint(Vector2.zero);
         max = Camera.main.ViewportToWorldPoint(Vector2.one);
+        min.y -= min.y * diffY * 2f;
         Vector2 size = GetComponent<SpriteRenderer>().bounds.size / 2f;
         Vector2 pos = transform.position;
         Vector2 rot = new Vector2(

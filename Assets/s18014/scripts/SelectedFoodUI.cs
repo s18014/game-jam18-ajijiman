@@ -25,13 +25,13 @@ public class SelectedFoodUI : MonoBehaviour {
 	void Update () {
         if (isSelected)
         {
-            image.fillAmount = 0f;
+            image.enabled = false;
         }
         else
         {
-            image.fillAmount = 1f;
+            image.enabled = true;
         }
-	}
+    }
 
     void fitToParentSize () {
         Vector2 rectSize = thisRect.sizeDelta;
