@@ -35,10 +35,11 @@ public class Dragon_Frame : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Dango" || "Pizza" || "Nikuman")
+        if (other.gameObject.tag == "Dango" || other.gameObject.tag == "Pizza" || other.gameObject.tag == "Nikuman")
         {
-
+            Destroy(other.gameObject);
         }
+    }
 
     /*
         public int speed = 4;
