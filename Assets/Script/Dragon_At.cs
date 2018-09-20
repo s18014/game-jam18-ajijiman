@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Dragon_At : MonoBehaviour {
 
-    //private GameObject target;
+    private GameObject target;
 
+    void Start()
+    {
+        // 名前でオブジェクトを特定するので一言一句合致させること（ポイント）
+        target = GameObject.Find("Player");
 
-	
-	void Start () {
-        //target = GameObject.Find("Player");
-	 	
-	}
-	
-	
-	void Update () {
-        //this.transform.LookAt(target.transform.position);
-		
-	}
+    }
+
+    void Update()
+    {
+        // 「LookAtメソッド」の活用（ポイント）
+        this.gameObject.transform.LookAt(target.transform.position);
+    }
 }

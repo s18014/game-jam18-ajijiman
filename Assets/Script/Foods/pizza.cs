@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class dango : MonoBehaviour {
+public class pizza : MonoBehaviour {
 
-    public int DangookoP;
-    public int DangoDM;
-    public nemuHP nemuHp;
     public okoHP okoHp;
+    public nemuHP nemuHp;
+    public int PizzaDM;
+    public int PizzaokoP;
 
     // Use this for initialization
     void Start () {
@@ -23,19 +23,16 @@ public class dango : MonoBehaviour {
     {
         if (other.gameObject.tag == "Dragon_Head")
         {
-
-            nemuHp.Addnemu(DangoDM);
+            nemuHp.Addnemu(PizzaDM);
 
             Destroy(this.gameObject);
         }
 
         if (other.gameObject.tag == "Hazure")
         {
-            okoHp.Addoko(DangookoP);
+            okoHp.Addoko(PizzaokoP);
 
             Destroy(this.gameObject);
         }
-
-
     }
 }

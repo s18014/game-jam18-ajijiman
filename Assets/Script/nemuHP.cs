@@ -29,22 +29,14 @@ public class nemuHP : MonoBehaviour {
         _slider.value = nemuHp;
     }
 
-    public void Addnemuhp(int amount)
+  
+    public void Addnemu(int amount)
     {
         nemuHp += amount;
     }
 
+   
     /*
-    public void AddDangoo(int amount)
-    {
-        nemuHp += amount;
-    }
-
-    public void AddPizza(int amount)
-    {
-        nemuHp += amount;
-    }
-
     public void AddNikuman(int amount)
     {
         nemuHp += amount;
