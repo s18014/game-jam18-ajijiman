@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114607402350597306}
   - component: {fileID: 114333983232700362}
   m_Layer: 0
-  m_Name: MeatBun
+  m_Name: Nikuman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,6 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2165e2f84a648b4885f6997789d5f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  power: 10
+  speed: 20
+  angry: 10
+  deray: 0.5
 --- !u!114 &114607402350597306
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,9 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbcbc67da1a994f3ea993c602938baac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 0
-  speed: 20
-  coolTime: 0
 --- !u!212 &212552408505939954
 SpriteRenderer:
   m_ObjectHideFlags: 1

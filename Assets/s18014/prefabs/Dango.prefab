@@ -90,6 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2165e2f84a648b4885f6997789d5f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  power: 1
+  speed: 20
+  angry: 1
+  deray: 0.1
 --- !u!114 &114841375237130962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,9 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91eb3e8f155b85e468aa8115754cc11a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 1
-  speed: 20
-  chageTime: 0
 --- !u!212 &212398730987674986
 SpriteRenderer:
   m_ObjectHideFlags: 1

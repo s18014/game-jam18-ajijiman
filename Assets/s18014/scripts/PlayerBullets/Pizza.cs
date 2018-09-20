@@ -24,7 +24,7 @@ public class Pizza : MonoBehaviour {
     IEnumerator move ()
     {
         firstMove();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         secondMove();
     }
 
@@ -36,6 +36,13 @@ public class Pizza : MonoBehaviour {
         dirction.y = Mathf.Sin(Mathf.Deg2Rad * angle);
         dirction.Normalize();
         rig.velocity = dirction * speed / 2f;
+        gravity = 0f;
+        rig.velocity = Vector2.zero;
+        Vector2 pos = transform.position;
+        Vector2 direction = target - pos;
+        direction.Normalize();
+        rig.velocity = direction * speed / 2f;
+ 
     }
 
     void secondMove()
