@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50436133206582612}
   - component: {fileID: 114070459292910868}
   - component: {fileID: 114790719667143522}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Pizza
   m_TagString: Pizza
   m_Icon: {fileID: 0}
@@ -137,8 +137,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -958225501
-  m_SortingLayer: 0
+  m_SortingLayerID: 1768639223
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d9570b0d935ab4553b0c2ed2e60c94fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

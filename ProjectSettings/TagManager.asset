@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - DestroyArea
+  - Pizza
+  - Dango
+  - Nikuman
+  - Hazure
+  - Dragon_Head
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
@@ -13,11 +21,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - DestroyArea
+  - Enemy
+  - EnemyBullet
+  - Player
+  - PlayerBullet
   - 
   - 
   - 
@@ -40,4 +48,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 3278558711
+    locked: 0
+  - name: Enemy
+    uniqueID: 3027371437
+    locked: 0
+  - name: PlayerBullet
+    uniqueID: 1768639223
+    locked: 0
+  - name: EnemyBullet
+    uniqueID: 3384663867
     locked: 0
