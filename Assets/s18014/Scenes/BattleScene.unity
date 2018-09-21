@@ -1134,13 +1134,12 @@ MonoBehaviour:
 --- !u!114 &1592783082
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114912181200856412, guid: 6c28970d49e9e45ce9e931e6f722157a,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1592783080}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8a5e60b1ada13c45b0ddbf780c78867, type: 3}
+  m_Script: {fileID: 11500000, guid: 8af0392758c1bdc4eb67bd80bc8e2ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
