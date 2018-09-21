@@ -19,7 +19,5 @@ public class Fairy_move : MonoBehaviour {
         {
             animator.Play("Throw");
         }
-        
-
     }
 }
