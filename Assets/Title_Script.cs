@@ -11,7 +11,7 @@ public class Title_Script : MonoBehaviour {
 
     public void OsStartButtonClicked()
     {
-        Application.LoadLevel("Main");
+        Application.LoadLevel("BattleScene");
     }
 
 
