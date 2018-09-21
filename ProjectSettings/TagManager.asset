@@ -7,6 +7,10 @@ TagManager:
   - Pizza
   - Enemy
   - DestroyArea
+  - Dango
+  - Nikuman
+  - Drangon_Head
+  - Hazure
   layers:
   - Default
   - TransparentFX
