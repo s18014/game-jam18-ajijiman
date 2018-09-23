@@ -6,12 +6,14 @@ public class Player : MonoBehaviour
 {
     public float speed;
     public int hp;
+    int maxHp;
     Vector2 min;
     Vector2 max;
 
     // Use this for initialization
     void Start()
     {
+        maxHp = hp;
     }
 
     // Update is called once per frame
@@ -42,5 +44,13 @@ public class Player : MonoBehaviour
         pos.x = Mathf.Clamp(pos.x, min.x + size.x, max.x - size.x);
         pos.y = Mathf.Clamp(pos.y, min.y + size.y, max.y - size.y);
         transform.position = pos;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "EnemyBullet") {
+            hp -= 1;
+            if (hp < 0) hp = 0;
+        }
     }
 }
