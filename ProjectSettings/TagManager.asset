@@ -12,6 +12,7 @@ TagManager:
   - Hazure
   - Dragon_Head
   - EnemyBullet
+  - PlayerBullet
   layers:
   - Default
   - TransparentFX

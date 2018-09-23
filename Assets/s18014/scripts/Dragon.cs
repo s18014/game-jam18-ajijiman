@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Dragon : MonoBehaviour {
-    public GameObject[] bulletPrefabs;
-    float time = 3f;
+    public float maxHungryPoint;
+    public float hungryPoint;
+    public float maxAngryPoint;
+    public float angryPoint;
 
 	// Use this for initialization
 	void Start () {
-        StartCoroutine("shot");
+        hungryPoint = maxHungryPoint;
+        angryPoint = 0f;
 	}
 	
 	// Update is called once per frame
@@ -16,13 +19,5 @@ public class Dragon : MonoBehaviour {
 		
 	}
 
-    IEnumerator shot ()
-    {
-        yield return new WaitForSeconds(2f);
-        while(true)
-        {
-            Instantiate(bulletPrefabs[Random.Range(0, 2)]);
-            yield return new WaitForSeconds(time);
-        }
-    }
+
 }

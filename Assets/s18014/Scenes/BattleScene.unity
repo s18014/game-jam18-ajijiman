@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 50767379}
   - component: {fileID: 50767380}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: PlayerLife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -281,6 +281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 87241169}
+  - component: {fileID: 87241170}
   m_Layer: 5
   m_Name: DragonUI
   m_TagString: Untagged
@@ -308,6 +309,17 @@ RectTransform:
   m_AnchoredPosition: {x: -30, y: 0}
   m_SizeDelta: {x: 400, y: 80}
   m_Pivot: {x: 1, y: 1}
+--- !u!114 &87241170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 87241168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab5405877e7314ec781ab7ee927097c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &132118447
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,7 +812,6 @@ GameObject:
   m_Component:
   - component: {fileID: 469672959}
   - component: {fileID: 469672960}
-  - component: {fileID: 469672956}
   m_Layer: 5
   m_Name: SelectedFoodUI
   m_TagString: Untagged
@@ -808,24 +819,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &469672956
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 469672955}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ed4622b9dfcbb4f98bf872611c708afc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!224 &469672959
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1785,7 +1778,7 @@ SpriteRenderer:
   m_SortingLayerID: -1016408585
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a4d61f82f616ad54a830c15e6c1aeed4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84ae7caf5a3db4207a4527e0a857a3c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1805,7 +1798,7 @@ Transform:
   m_GameObject: {fileID: 1592783080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.8, y: -0.61, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0}
   m_Children:
   - {fileID: 50767379}
   m_Father: {fileID: 0}
@@ -1820,7 +1813,7 @@ Animator:
   m_GameObject: {fileID: 1592783080}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d5fc392c0e361dd4ba6f5ddef05ad89b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 802be7d2778dc4815b4a153c925893ab, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1907,7 +1900,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1987,9 +1980,10 @@ Transform:
   m_GameObject: {fileID: 1722639052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7, y: -1, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 2058182758}
+  - {fileID: 1800383871}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2002,7 +1996,7 @@ Animator:
   m_GameObject: {fileID: 1722639052}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d6265f06bd6432244ad11ececcd7755d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1bd96e75d1e8b473a977f0beb233877a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2043,8 +2037,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1267595859
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d655242fa42a5c846a2f9b8fb29756ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2068,9 +2062,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18247af4b441b6040b6de45b560ff029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefabs:
-  - {fileID: 1819944318397274, guid: e270516ed535f4af78cedfbf06c789f9, type: 2}
-  - {fileID: 1974676369829958, guid: 2215c397dfee340eeb8bec39711f2579, type: 2}
+  maxHungryPoint: 1000
+  hungryPoint: 0
+  maxAngryPoint: 100
+  angryPoint: 0
+--- !u!1 &1800383870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1800383871}
+  - component: {fileID: 1800383873}
+  - component: {fileID: 1800383872}
+  m_Layer: 9
+  m_Name: DragonBody
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1800383871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1800383870}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1722639053}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1800383872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1800383870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b64484cb8487549ada68af693d0f1378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1800383873
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1800383870}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 3}
+  m_EdgeRadius: 0
 --- !u!1 &1862624105
 GameObject:
   m_ObjectHideFlags: 0
@@ -2403,7 +2464,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2058182758}
   - component: {fileID: 2058182759}
-  m_Layer: 10
+  - component: {fileID: 2058182760}
+  m_Layer: 9
   m_Name: DragonHead
   m_TagString: Dragon_Head
   m_Icon: {fileID: 0}
@@ -2417,7 +2479,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2058182757}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: 1, z: 0}
+  m_LocalPosition: {x: -2.4, y: 1, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1722639053}
@@ -2437,4 +2499,15 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.3
+--- !u!114 &2058182760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2058182757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a208f5ae0817c47f78c046749047662a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

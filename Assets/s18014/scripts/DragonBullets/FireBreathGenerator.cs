@@ -6,6 +6,7 @@ public class FireBreathGenerator : MonoBehaviour {
     Bullet bullet;
     public GameObject fireBreathPrefab;
     public float time;
+    public float endAngle;
     float curentTime;
 
 	// Use this for initialization
@@ -17,7 +18,7 @@ public class FireBreathGenerator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         curentTime += Time.deltaTime;
-        transform.Rotate(new Vector3(0, 0, -68f * Time.deltaTime));
+        transform.Rotate(new Vector3(0, 0, endAngle * Time.deltaTime));
     }
 
     IEnumerator shot () {

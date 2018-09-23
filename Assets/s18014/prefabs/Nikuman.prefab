@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114333983232700362}
   m_Layer: 12
   m_Name: Nikuman
-  m_TagString: Nikuman
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 20
-  speed: 25
+  speed: 20
   angry: 15
   deray: 0.5
 --- !u!114 &114607402350597306

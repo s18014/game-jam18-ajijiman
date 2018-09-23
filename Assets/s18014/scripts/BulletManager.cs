@@ -8,9 +8,11 @@ public class BulletManager : MonoBehaviour {
     Bullet[] bullets;
     float[] lapTimes;
     bool[] isAttackable;
+    Animator animator;
 
 	// Use this for initialization
 	void Start () {
+        animator = GetComponent<Animator>();
         bullets = new Bullet[foodPrefabs.Length];
         lapTimes = new float[foodPrefabs.Length];
         isAttackable = new bool[foodPrefabs.Length];
@@ -37,6 +39,7 @@ public class BulletManager : MonoBehaviour {
                 Instantiate(foodPrefabs[equip], transform.position, Quaternion.identity);
                 isAttackable[equip] = false;
                 lapTimes[equip] = 0f;
+                animator.SetTrigger("Throw");
             }
         }
     }

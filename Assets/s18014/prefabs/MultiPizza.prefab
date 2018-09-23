@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114995045280262876}
   m_Layer: 12
   m_Name: MultiPizza
-  m_TagString: Pizza
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeae421a5d1fc0c428643c3063f69dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RangeOfAngle: 10
+  RangeOfAngle: 15
 --- !u!114 &114995045280262876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2165e2f84a648b4885f6997789d5f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 3
+  power: 5
   speed: 30
   angry: 3
   deray: 0
