@@ -6,6 +6,7 @@ public class BurstFire : MonoBehaviour {
     Bullet bullet;
     float speed;
     Rigidbody2D rig;
+    Vector2 target;
 
 
     // Use this for initialization
@@ -22,6 +23,6 @@ public class BurstFire : MonoBehaviour {
         bullet = GetComponent<Bullet>();
         speed = bullet.speed;
         rig = GetComponent<Rigidbody2D>();
-        rig.velocity = Vector2.left * speed;
+        rig.velocity = transform.up * speed;
     }
 }

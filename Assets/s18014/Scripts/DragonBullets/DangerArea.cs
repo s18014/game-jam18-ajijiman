@@ -10,7 +10,6 @@ public class DangerArea : MonoBehaviour {
 	void Start () {
         spr = GetComponent<SpriteRenderer>();
         spr.color = new Color(1f, 0f, 0f, 0f);
-        StartCoroutine("destroy");
 	}
 	
 	// Update is called once per frame
@@ -19,9 +18,4 @@ public class DangerArea : MonoBehaviour {
         if (alpha > 0.3f) alpha = 0.3f;
         spr.color = new Color(1f, 0f, 0f, alpha);
 	}
-
-    IEnumerator destroy () {
-        yield return new WaitForSeconds(1.5f);
-        Destroy(gameObject);
-    }
 }
