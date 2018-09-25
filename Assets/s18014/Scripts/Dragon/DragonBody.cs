@@ -18,7 +18,9 @@ public class DragonBody : MonoBehaviour {
     {
         if (other.gameObject.tag == "PlayerBullet")
         {
-            dragon.angryPoint += other.gameObject.GetComponent<Bullet>().angry;
+            if (!dragon.isAngry) {
+                dragon.angryPoint += other.gameObject.GetComponent<Bullet>().angry;
+            }
             if (dragon.angryPoint > dragon.maxAngryPoint) dragon.angryPoint = dragon.maxAngryPoint;
             if (dragon.angryPoint < 0f) dragon.angryPoint = 0f;
             Destroy(other.gameObject);

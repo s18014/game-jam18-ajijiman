@@ -18,10 +18,18 @@ public class DragonHead : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "PlayerBullet") {
-            dragon.hungryPoint -= other.gameObject.GetComponent<Bullet>().power;
-            if (dragon.hungryPoint > dragon.maxHungryPoint) dragon.hungryPoint = dragon.maxHungryPoint;
-            if (dragon.hungryPoint < 0f) dragon.hungryPoint = 0f;
-            Destroy(other.gameObject);
+            if (dragon.isAngry) {
+                dragon.angryPoint -= other.gameObject.GetComponent<Bullet>().power * 0.3f;
+                if (dragon.angryPoint > dragon.maxAngryPoint) dragon.angryPoint = dragon.maxAngryPoint;
+                if (dragon.angryPoint < 0f) dragon.angryPoint = 0f;
+                Destroy(other.gameObject);
+            }
+            else {
+                dragon.hungryPoint -= other.gameObject.GetComponent<Bullet>().power;
+                if (dragon.hungryPoint > dragon.maxHungryPoint) dragon.hungryPoint = dragon.maxHungryPoint;
+                if (dragon.hungryPoint < 0f) dragon.hungryPoint = 0f;
+                Destroy(other.gameObject);
+            }
         }
     }
 }
