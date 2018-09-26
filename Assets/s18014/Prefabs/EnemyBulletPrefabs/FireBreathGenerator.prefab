@@ -69,5 +69,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireBreathPrefab: {fileID: 1555568655534570, guid: e2db5544a47fe4db99d87f5cd6907b31,
     type: 2}
-  time: 0.8
-  endAngle: -68
+  time: 1
+  endAngle: -200

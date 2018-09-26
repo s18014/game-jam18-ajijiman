@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 46617156}
   - component: {fileID: 46617155}
+  - component: {fileID: 46617157}
   m_Layer: 0
   m_Name: AttackPattern
   m_TagString: Untagged
@@ -155,6 +156,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &46617157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 46617154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fceb816db39d46f5ac8035879e070a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireBreathGeneratorPrefab: {fileID: 1819944318397274, guid: e270516ed535f4af78cedfbf06c789f9,
+    type: 2}
 --- !u!1 &50767378
 GameObject:
   m_ObjectHideFlags: 0
@@ -2159,6 +2173,7 @@ MonoBehaviour:
   maxAngryPoint: 100
   angryPoint: 0
   isAngry: 0
+  angryCount: 0
   burnEffectPrefab: {fileID: 1197922175744552, guid: 08535273824af4b5488252f99641f7a7,
     type: 2}
 --- !u!1 &1800383870

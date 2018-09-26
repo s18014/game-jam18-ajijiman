@@ -18,13 +18,14 @@ public class FireBreathGenerator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         curentTime += Time.deltaTime;
+        if (curentTime > time) return;
         transform.Rotate(new Vector3(0, 0, endAngle * Time.deltaTime));
     }
 
     IEnumerator shot () {
         while(true) {
-            Instantiate(fireBreathPrefab, transform.position, transform.rotation);
             if (curentTime > time) break;
+            Instantiate(fireBreathPrefab, transform.position, transform.rotation);
             yield return new WaitForSeconds(bullet.deray);
         }
         Destroy(gameObject);

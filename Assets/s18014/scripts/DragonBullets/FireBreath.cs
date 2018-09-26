@@ -20,7 +20,7 @@ public class FireBreath : MonoBehaviour {
     void move () {
         speed = GetComponent<Bullet>().speed;
         rig = GetComponent<Rigidbody2D>();
-        Vector2 direction = transform.rotation * Vector2.left;
+        Vector2 direction = transform.rotation * Vector2.up;
         rig.velocity = direction * speed;
     }
 }

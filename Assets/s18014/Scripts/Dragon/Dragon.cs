@@ -8,6 +8,7 @@ public class Dragon : MonoBehaviour {
     public float maxAngryPoint;
     public float angryPoint;
     public bool isAngry;
+    public int angryCount;
     public GameObject burnEffectPrefab;
     Animator animator;
 
@@ -27,6 +28,7 @@ public class Dragon : MonoBehaviour {
     void checkAngry () {
         if (angryPoint >= maxAngryPoint && !isAngry) {
             isAngry = true;
+            angryCount += 1;
             animator.SetBool("isAngry", true);
             Instantiate(burnEffectPrefab, transform.position, Quaternion.identity);
             angryPoint = maxAngryPoint;
