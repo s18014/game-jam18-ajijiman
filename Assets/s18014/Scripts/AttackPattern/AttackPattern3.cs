@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackPattern2 : MonoBehaviour {
+public class AttackPattern3 : MonoBehaviour {
+    public GameObject fireWallPrefab;
     public GameObject fireBreathGeneratorPrefab;
     Animator dragonAnime;
 
@@ -11,41 +12,65 @@ public class AttackPattern2 : MonoBehaviour {
     private void Awake()
     {
         dragonAnime = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
+        setFireWall();
     }
-    void Start () {
+
+    void Start()
+    {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update() {
     }
 
     private void OnEnable()
     {
         StartCoroutine("attack");
+        StartCoroutine("fireWallAttack");
     }
 
     private void OnDisable()
     {
         StopCoroutine("attack");
+        StopCoroutine("firewallAttack");
     }
 
-    IEnumerator attack () {
+    IEnumerator attack()
+    {
         yield return new WaitForSeconds(1f);
         while (isActiveAndEnabled)
         {
             dragonAnime.SetTrigger("Attack");
-            set(200f, 1f);
+            setFireBreath(180f, 1f);
             Instantiate(fireBreathGeneratorPrefab, transform.position, Quaternion.Euler(0f, 0f, -90f));
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2.5f);
 
             dragonAnime.SetTrigger("Attack");
-            set(-200f, 1f);
+            setFireBreath(-180f, 1f);
             Instantiate(fireBreathGeneratorPrefab, transform.position, Quaternion.Euler(0f, 0f, -90f));
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2.5f);
+        }
+
+    }
+
+    IEnumerator fireWallAttack() {
+        yield return new WaitForSeconds(1f);
+        while (isActiveAndEnabled) 
+        {
+            Instantiate(fireWallPrefab);
+            yield return new WaitForSeconds(8f);
         }
     }
 
-    void set (float angle, float time) {
+
+    void setFireWall()
+    {
+        FireWall fireWall = fireWallPrefab.GetComponent<FireWall>();
+        fireWall.bulletNum = 20;
+    }
+
+    void setFireBreath(float angle, float time)
+    {
         FireBreathGenerator fireBreathGenjrator = fireBreathGeneratorPrefab.GetComponent<FireBreathGenerator>();
         fireBreathGenjrator.time = time;
         fireBreathGenjrator.endAngle = angle;

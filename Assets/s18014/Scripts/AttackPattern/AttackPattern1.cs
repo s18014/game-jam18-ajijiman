@@ -7,46 +7,61 @@ public class AttackPattern1 : MonoBehaviour {
     GameObject player;
     Animator dragonAnime;
     Bullet bullet;
-    bool isAttackabal = true;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+
+    private void Awake()
+    {
         bullet = multiFireBallPrefab.GetComponent<Bullet>();
         player = GameObject.FindWithTag("Player");
         dragonAnime = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
-        set();
+    }
+
+    void Start () {
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (isAttackabal) StartCoroutine("attack");
 	}
 
+    private void OnEnable()
+    {
+        set(30f, 3);
+        StartCoroutine("attack");
+    }
+
+    private void OnDisable()
+    {
+        StopCoroutine("attack");
+    }
+
     IEnumerator attack () {
-        isAttackabal = false;
 
-        // first attack
-        dragonAnime.SetTrigger("Attack");
-        Quaternion rot = direction();
-        for (int i = 0; i < 3; i++) {
-            yield return new WaitForSeconds(bullet.deray);
-            Instantiate(multiFireBallPrefab, transform.position, rot);
-        }
-
-        yield return new WaitForSeconds(1f);
-
-        // second attack
-        dragonAnime.SetTrigger("Attack");
-        rot = direction();
-        for (int i = 0; i < 3; i++)
+        while (isActiveAndEnabled)
         {
-            yield return new WaitForSeconds(bullet.deray);
-            Instantiate(multiFireBallPrefab, transform.position, rot);
+            // first attack
+            dragonAnime.SetTrigger("Attack");
+            Quaternion rot = direction();
+            for (int i = 0; i < 3; i++)
+            {
+                yield return new WaitForSeconds(bullet.deray);
+                Instantiate(multiFireBallPrefab, transform.position, rot);
+            }
+
+            yield return new WaitForSeconds(1f);
+
+            // second attack
+            dragonAnime.SetTrigger("Attack");
+            rot = direction();
+            for (int i = 0; i < 3; i++)
+            {
+                yield return new WaitForSeconds(bullet.deray);
+                Instantiate(multiFireBallPrefab, transform.position, rot);
+            }
+
+            yield return new WaitForSeconds(1f);
         }
 
-        yield return new WaitForSeconds(1f);
-
-        isAttackabal = true;
     }
 
     Quaternion direction () {
@@ -56,9 +71,9 @@ public class AttackPattern1 : MonoBehaviour {
 
     }
 
-    void set () {
+    void set (float angle, int num) {
         MulitFireBall multiFireBall = multiFireBallPrefab.GetComponent<MulitFireBall>();
-        multiFireBall.angle = 30;
-        multiFireBall.numberOfBullet = 3;
+        multiFireBall.angle = angle;
+        multiFireBall.numberOfBullet = num;
     }
 }

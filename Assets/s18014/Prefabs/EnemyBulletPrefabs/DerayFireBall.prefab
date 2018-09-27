@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 0
-  speed: 10
+  speed: 5
   angry: 0
   deray: 2
 --- !u!114 &114947430985113390

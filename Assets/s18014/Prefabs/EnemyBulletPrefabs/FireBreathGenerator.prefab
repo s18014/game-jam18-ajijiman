@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4979401935616464}
   - component: {fileID: 114388735504272406}
   - component: {fileID: 114288329180552604}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FireBreathGenerator
-  m_TagString: Untagged
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,4 +70,4 @@ MonoBehaviour:
   fireBreathPrefab: {fileID: 1555568655534570, guid: e2db5544a47fe4db99d87f5cd6907b31,
     type: 2}
   time: 1
-  endAngle: -200
+  endAngle: 180
