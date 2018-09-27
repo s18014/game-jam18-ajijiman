@@ -34,20 +34,20 @@ public class AttackPattern2 : MonoBehaviour {
         while (isActiveAndEnabled)
         {
             dragonAnime.SetTrigger("Attack");
-            set(200f, 1f);
-            Instantiate(fireBreathGeneratorPrefab, transform.position, Quaternion.Euler(0f, 0f, -90f));
+            set(20f, 12);
+            Instantiate(fireBreathGeneratorPrefab, transform.position, Quaternion.Euler(0f, 0f, Random.Range(-75f, -90f)));
             yield return new WaitForSeconds(1.5f);
 
             dragonAnime.SetTrigger("Attack");
-            set(-200f, 1f);
-            Instantiate(fireBreathGeneratorPrefab, transform.position, Quaternion.Euler(0f, 0f, -90f));
+            set(-20f, 12);
+            Instantiate(fireBreathGeneratorPrefab, transform.position, Quaternion.Euler(0f, 0f, Random.Range(-75f, -90f)));
             yield return new WaitForSeconds(1.5f);
         }
     }
 
-    void set (float angle, float time) {
+    void set (float angle, int num) {
         FireBreathGenerator fireBreathGenjrator = fireBreathGeneratorPrefab.GetComponent<FireBreathGenerator>();
-        fireBreathGenjrator.time = time;
-        fireBreathGenjrator.endAngle = angle;
+        fireBreathGenjrator.angle = angle;
+        fireBreathGenjrator.bulletNum = num;
     }
 }

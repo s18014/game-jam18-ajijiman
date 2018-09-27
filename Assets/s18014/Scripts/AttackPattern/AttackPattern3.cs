@@ -41,12 +41,12 @@ public class AttackPattern3 : MonoBehaviour {
         while (isActiveAndEnabled)
         {
             dragonAnime.SetTrigger("Attack");
-            setFireBreath(180f, 1f);
+            setFireBreath(20f, 10);
             Instantiate(fireBreathGeneratorPrefab, transform.position, Quaternion.Euler(0f, 0f, -90f));
             yield return new WaitForSeconds(2.5f);
 
             dragonAnime.SetTrigger("Attack");
-            setFireBreath(-180f, 1f);
+            setFireBreath(-20f, 10);
             Instantiate(fireBreathGeneratorPrefab, transform.position, Quaternion.Euler(0f, 0f, -90f));
             yield return new WaitForSeconds(2.5f);
         }
@@ -69,10 +69,10 @@ public class AttackPattern3 : MonoBehaviour {
         fireWall.bulletNum = 20;
     }
 
-    void setFireBreath(float angle, float time)
+    void setFireBreath(float angle, int num)
     {
         FireBreathGenerator fireBreathGenjrator = fireBreathGeneratorPrefab.GetComponent<FireBreathGenerator>();
-        fireBreathGenjrator.time = time;
-        fireBreathGenjrator.endAngle = angle;
+        fireBreathGenjrator.angle = angle;
+        fireBreathGenjrator.bulletNum = num;
     }
 }

@@ -19,7 +19,7 @@ public class DragonHead : MonoBehaviour {
     {
         if (other.gameObject.tag == "PlayerBullet") {
             if (dragon.isAngry) {
-                dragon.angryPoint -= other.gameObject.GetComponent<Bullet>().power * 0.3f;
+                dragon.angryPoint -= other.gameObject.GetComponent<Bullet>().power * 0.2f;
                 if (dragon.angryPoint > dragon.maxAngryPoint) dragon.angryPoint = dragon.maxAngryPoint;
                 if (dragon.angryPoint < 0f) dragon.angryPoint = 0f;
                 Destroy(other.gameObject);

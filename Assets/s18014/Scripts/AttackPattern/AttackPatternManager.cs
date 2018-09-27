@@ -22,7 +22,7 @@ public class AttackPatternManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        swichingPattern();
+        if (dragon.isAngry) swichingAngryPattern(); else swichingPattern();
 	}
 
     void setInactive () {
@@ -58,6 +58,35 @@ public class AttackPatternManager : MonoBehaviour {
             if (!attackPatterns[3].activeSelf) {
                 setInactive();
                 attackPatterns[3].SetActive(true);
+            }
+        }
+    }
+
+    void swichingAngryPattern()
+    {
+        if (dragon.angryCount == 1)
+        {
+            if (!attackPatterns[4].activeSelf)
+            {
+                setInactive();
+                attackPatterns[4].SetActive(true);
+            }
+        }
+        else if (dragon.angryCount == 2)
+        {
+            if (!attackPatterns[5].activeSelf)
+            {
+                setInactive();
+                attackPatterns[5].SetActive(true);
+            }
+        }
+        else if (dragon.angryCount == 3)
+        {
+            if (!attackPatterns[6].activeSelf)
+            {
+                setInactive();
+                attackPatterns[6].SetActive(true);
+
             }
         }
     }

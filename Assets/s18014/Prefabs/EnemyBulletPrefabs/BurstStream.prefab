@@ -142,7 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   burstFirePrefab: {fileID: 1450000341880690, guid: 771d3bd584c2d42509e70c71a91befb9,
     type: 2}
-  time: 1
+  time: 0.8
   deray: 1
 --- !u!114 &114670468980604910
 MonoBehaviour:

@@ -5,9 +5,8 @@ using UnityEngine;
 public class FireBreathGenerator : MonoBehaviour {
     Bullet bullet;
     public GameObject fireBreathPrefab;
-    public float time;
-    public float endAngle;
-    float curentTime;
+    public float angle;
+    public int bulletNum;
 
 	// Use this for initialization
 	void Start () {
@@ -17,15 +16,12 @@ public class FireBreathGenerator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        curentTime += Time.deltaTime;
-        if (curentTime > time) return;
-        transform.Rotate(new Vector3(0, 0, endAngle * Time.deltaTime));
     }
 
     IEnumerator shot () {
-        while(true) {
-            if (curentTime > time) break;
+        for (int i = 0; i < bulletNum; i++) {
             Instantiate(fireBreathPrefab, transform.position, transform.rotation);
+            transform.Rotate(new Vector3(0, 0, angle));
             yield return new WaitForSeconds(bullet.deray);
         }
         Destroy(gameObject);
