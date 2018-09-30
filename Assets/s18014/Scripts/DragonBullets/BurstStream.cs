@@ -7,11 +7,16 @@ public class BurstStream : MonoBehaviour {
     public GameObject burstFirePrefab;
     public float time;
     public float deray;
+    public AudioClip[] audioClips;
+    AudioSource audioSource;
     float curentTime;
 
     // Use this for initialization
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = audioClips[0];
+        AudioSource.PlayClipAtPoint(audioClips[0], transform.position, 500f);
         bullet = GetComponent<Bullet>();
         time += deray;
         StartCoroutine("shot");
@@ -26,6 +31,8 @@ public class BurstStream : MonoBehaviour {
     IEnumerator shot()
     {
         yield return new WaitForSeconds(deray);
+        audioSource.clip = audioClips[1];
+        AudioSource.PlayClipAtPoint(audioClips[1], transform.position);
         while (true)
         {
             Instantiate(burstFirePrefab, transform.position, transform.rotation);

@@ -56,6 +56,9 @@ TagManager:
   - name: Enemy
     uniqueID: 3027371437
     locked: 0
+  - name: DangerArea
+    uniqueID: 2229106333
+    locked: 0
   - name: EnemyBullet
     uniqueID: 3384663867
     locked: 0

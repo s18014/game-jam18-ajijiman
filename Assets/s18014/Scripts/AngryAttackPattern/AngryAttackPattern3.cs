@@ -40,14 +40,14 @@ public class AngryAttackPattern3 : MonoBehaviour {
     {
         yield return new WaitForSeconds(4f);
         while (isActiveAndEnabled) {
-            Instantiate(burstStreamPrefab, new Vector2(7f, 3.3f), Quaternion.Euler(0f, 0f, 90f));
-            Instantiate(burstStreamPrefab, new Vector2(7f, 2.3f), Quaternion.Euler(0f, 0f, 90f));
-            Instantiate(burstStreamPrefab, new Vector2(7f, 1.3f), Quaternion.Euler(0f, 0f, 90f));
+            Instantiate(burstStreamPrefab, new Vector2(8f, 3.3f), Quaternion.Euler(0f, 0f, 90f));
+            Instantiate(burstStreamPrefab, new Vector2(8f, 2.3f), Quaternion.Euler(0f, 0f, 90f));
+            Instantiate(burstStreamPrefab, new Vector2(8f, 1.3f), Quaternion.Euler(0f, 0f, 90f));
             yield return new WaitForSeconds(2.5f);
 
-            Instantiate(burstStreamPrefab, new Vector2(7f, -3.3f), Quaternion.Euler(0f, 0f, 90f));
-            Instantiate(burstStreamPrefab, new Vector2(7f, -2.3f), Quaternion.Euler(0f, 0f, 90f));
-            Instantiate(burstStreamPrefab, new Vector2(7f, -1.3f), Quaternion.Euler(0f, 0f, 90f));
+            Instantiate(burstStreamPrefab, new Vector2(8f, -3.3f), Quaternion.Euler(0f, 0f, 90f));
+            Instantiate(burstStreamPrefab, new Vector2(8f, -2.3f), Quaternion.Euler(0f, 0f, 90f));
+            Instantiate(burstStreamPrefab, new Vector2(8f, -1.3f), Quaternion.Euler(0f, 0f, 90f));
             yield return new WaitForSeconds(2.5f);
         }
     }
@@ -64,12 +64,12 @@ public class AngryAttackPattern3 : MonoBehaviour {
 
     IEnumerator firstAttack() {
         yield return new WaitForSeconds(1f);
-        Instantiate(burstStreamPrefab, new Vector2(7f, 4.5f), Quaternion.Euler(0f, 0f, 90f));
-        Instantiate(burstStreamPrefab, new Vector2(7f, 2.5f), Quaternion.Euler(0f, 0f, 90f));
-        Instantiate(burstStreamPrefab, new Vector2(7f, -4.5f), Quaternion.Euler(0f, 0f, 90f));
-        Instantiate(burstStreamPrefab, new Vector2(7f, -2.5f), Quaternion.Euler(0f, 0f, 90f));
+        Instantiate(burstStreamPrefab, new Vector2(8f, 4.5f), Quaternion.Euler(0f, 0f, 90f));
+        Instantiate(burstStreamPrefab, new Vector2(8f, 2.5f), Quaternion.Euler(0f, 0f, 90f));
+        Instantiate(burstStreamPrefab, new Vector2(8f, -4.5f), Quaternion.Euler(0f, 0f, 90f));
+        Instantiate(burstStreamPrefab, new Vector2(8f, -2.5f), Quaternion.Euler(0f, 0f, 90f));
         yield return new WaitForSeconds(1.4f);
-        Instantiate(burstStreamPrefab, new Vector2(7f, 0f), Quaternion.Euler(0f, 0f, 90f));
+        Instantiate(burstStreamPrefab, new Vector2(8f, 0f), Quaternion.Euler(0f, 0f, 90f));
     }
 
 

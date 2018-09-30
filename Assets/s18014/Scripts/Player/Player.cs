@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public float speed;
     public int hp;
+    public AudioClip audioClip;
     int maxHp;
     bool isInvincible = false;
     SpriteRenderer spr;
@@ -80,6 +81,7 @@ public class Player : MonoBehaviour
             StartCoroutine("invincible");
             hp -= 1;
             if (hp < 0) hp = 0;
+            AudioSource.PlayClipAtPoint(audioClip, transform.position);
         }
     }
 }

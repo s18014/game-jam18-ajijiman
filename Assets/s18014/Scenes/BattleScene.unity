@@ -575,6 +575,48 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &205019750
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4566686839529546, guid: 086effb2623ea4f25b5198a8590b6479, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566686839529546, guid: 086effb2623ea4f25b5198a8590b6479, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566686839529546, guid: 086effb2623ea4f25b5198a8590b6479, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566686839529546, guid: 086effb2623ea4f25b5198a8590b6479, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566686839529546, guid: 086effb2623ea4f25b5198a8590b6479, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566686839529546, guid: 086effb2623ea4f25b5198a8590b6479, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566686839529546, guid: 086effb2623ea4f25b5198a8590b6479, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4566686839529546, guid: 086effb2623ea4f25b5198a8590b6479, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 086effb2623ea4f25b5198a8590b6479, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &223657669
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,34 +1510,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1190816614}
   m_CullTransparentMesh: 0
---- !u!1 &1274952546
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1274952547}
-  m_Layer: 0
-  m_Name: AngryAttackPattern4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1274952547
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1274952546}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1280320075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,6 +2033,8 @@ MonoBehaviour:
   - {fileID: 1624495102353380, guid: 2ad2d7c3903f544dbbfad0ada8075de5, type: 2}
   - {fileID: 1942837064949582, guid: 936e33180ded54d3aa6518b70a28a8db, type: 2}
   equip: 0
+  audioClips:
+  - {fileID: 8300000, guid: f35a4ede36e0b2a4a8157e298cfaab2f, type: 3}
 --- !u!114 &1592783082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2032,6 +2048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   hp: 3
+  audioClip: {fileID: 8300000, guid: 2e2ddc714c5920e40bf4ccffd979aa28, type: 3}
 --- !u!58 &1592783083
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2102,7 +2119,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1016408585
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 84ae7caf5a3db4207a4527e0a857a3c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2506,7 +2523,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1597693297
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0, g: 1, b: 0, a: 1}
@@ -2560,6 +2577,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64484cb8487549ada68af693d0f1378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: add52fc304a054f0ba31aa4f37fa6bc4, type: 3}
 --- !u!61 &1800383873
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3071,3 +3089,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a208f5ae0817c47f78c046749047662a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 884805c9716b0ff418bd048b580d5d20, type: 3}

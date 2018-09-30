@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DragonBody : MonoBehaviour {
     Dragon dragon;
+    public AudioClip audioClip;
 
     // Use this for initialization
     void Start () {
@@ -23,6 +24,7 @@ public class DragonBody : MonoBehaviour {
             }
             if (dragon.angryPoint > dragon.maxAngryPoint) dragon.angryPoint = dragon.maxAngryPoint;
             if (dragon.angryPoint < 0f) dragon.angryPoint = 0f;
+            AudioSource.PlayClipAtPoint(audioClip, transform.position);
             Destroy(other.gameObject);
         }
     }

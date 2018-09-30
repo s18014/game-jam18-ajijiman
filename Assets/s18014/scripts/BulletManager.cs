@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletManager : MonoBehaviour {
     public GameObject[] foodPrefabs;
     public int equip = 0;
+    public AudioClip[] audioClips;
     Bullet[] bullets;
     float[] lapTimes;
     bool[] isAttackable;
@@ -40,6 +41,7 @@ public class BulletManager : MonoBehaviour {
                 isAttackable[equip] = false;
                 lapTimes[equip] = 0f;
                 animator.SetTrigger("Throw");
+                AudioSource.PlayClipAtPoint(audioClips[0], transform.position);
             }
         }
     }
