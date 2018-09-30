@@ -53,5 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireBreathGeneratorPrefab: {fileID: 1819944318397274, guid: e270516ed535f4af78cedfbf06c789f9,
     type: 2}
-  burstStreamPrafab: {fileID: 1540249722833610, guid: ed66b3065d02b47c4a238f351ebbc00e,
+  burstStreamPrefab: {fileID: 1540249722833610, guid: ed66b3065d02b47c4a238f351ebbc00e,
     type: 2}

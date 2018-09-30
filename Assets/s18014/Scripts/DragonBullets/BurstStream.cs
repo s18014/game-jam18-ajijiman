@@ -34,4 +34,14 @@ public class BurstStream : MonoBehaviour {
         }
         Destroy(gameObject);
     }
+
+    public void set(float time, float deray, float speed)
+    {
+        Bullet burstStreamBullet = this.GetComponent<Bullet>();
+        Bullet burstFireBullet = this.burstFirePrefab.GetComponent<Bullet>();
+
+        this.time = time;
+        burstStreamBullet.deray = deray;
+        burstFireBullet.speed = speed;
+    }
 }

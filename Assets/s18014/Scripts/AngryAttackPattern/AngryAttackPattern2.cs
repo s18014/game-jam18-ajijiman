@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AngryAttackPattern2 : MonoBehaviour {
     public GameObject fireBreathGeneratorPrefab;
-    public GameObject burstStreamPrafab;
+    public GameObject burstStreamPrefab;
 
 
     // Use this for initialization
@@ -48,9 +48,12 @@ public class AngryAttackPattern2 : MonoBehaviour {
 
     IEnumerator firstAttack()
     {
+        setBrustStream();
         yield return new WaitForSeconds(1f);
-        Instantiate(burstStreamPrafab, new Vector2(7f, 3.3f), Quaternion.Euler(0f, 0f, 90f));
-        Instantiate(burstStreamPrafab, new Vector2(7f, -3.3f), Quaternion.Euler(0f, 0f, 90f));
+        Instantiate(burstStreamPrefab, new Vector2(7f, 4.5f), Quaternion.Euler(0f, 0f, 90f));
+        Instantiate(burstStreamPrefab, new Vector2(7f, 2.5f), Quaternion.Euler(0f, 0f, 90f));
+        Instantiate(burstStreamPrefab, new Vector2(7f, -2.5f), Quaternion.Euler(0f, 0f, 90f));
+        Instantiate(burstStreamPrefab, new Vector2(7f, -4.5f), Quaternion.Euler(0f, 0f, 90f));
     }
 
 
@@ -60,5 +63,18 @@ public class AngryAttackPattern2 : MonoBehaviour {
         FireBreathGenerator fireBreathGenjrator = fireBreathGeneratorPrefab.GetComponent<FireBreathGenerator>();
         fireBreathGenjrator.angle = angle;
         fireBreathGenjrator.bulletNum = num;
+    }
+
+    void setBrustStream()
+    {
+        BurstStream burstStream = burstStreamPrefab.GetComponent<BurstStream>();
+        Bullet burstStreamBullet = burstStream.GetComponent<Bullet>();
+        GameObject burstFire = burstStream.burstFirePrefab;
+        Bullet burstFireBullet = burstFire.GetComponent<Bullet>();
+
+        burstStream.time = 1f;
+        burstStreamBullet.deray = 0.08f;
+
+        burstFireBullet.speed = 50f;
     }
 }

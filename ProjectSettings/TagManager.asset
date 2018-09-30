@@ -53,17 +53,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 3278558711
-    locked: 0
   - name: Enemy
     uniqueID: 3027371437
+    locked: 0
+  - name: EnemyBullet
+    uniqueID: 3384663867
     locked: 0
   - name: PlayerBullet
     uniqueID: 1768639223
     locked: 0
-  - name: EnemyBullet
-    uniqueID: 3384663867
+  - name: Player
+    uniqueID: 3278558711
     locked: 0
   - name: UI
     uniqueID: 1597693297

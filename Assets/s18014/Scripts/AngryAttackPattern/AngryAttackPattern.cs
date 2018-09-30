@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class AngryAttackPattern : MonoBehaviour {
     public GameObject multiFireBallPrefab;
-    public GameObject burstStreamPrafab;
+    public GameObject burstStreamPrefab;
     GameObject player;
-    Animator dragonAnime;
     Bullet bullet;
 
     // Use this for initialization
@@ -15,7 +14,6 @@ public class AngryAttackPattern : MonoBehaviour {
     {
         bullet = multiFireBallPrefab.GetComponent<Bullet>();
         player = GameObject.FindWithTag("Player");
-        dragonAnime = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
     }
 
     void Start()
@@ -45,7 +43,6 @@ public class AngryAttackPattern : MonoBehaviour {
         while (isActiveAndEnabled)
         {
             // first attack
-            dragonAnime.SetTrigger("Attack");
             Quaternion rot = direction();
             for (int i = 0; i < 3; i++)
             {
@@ -53,10 +50,9 @@ public class AngryAttackPattern : MonoBehaviour {
                 Instantiate(multiFireBallPrefab, transform.position, rot);
             }
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.2f);
 
             // second attack
-            dragonAnime.SetTrigger("Attack");
             rot = direction();
             for (int i = 0; i < 3; i++)
             {
@@ -64,14 +60,15 @@ public class AngryAttackPattern : MonoBehaviour {
                 Instantiate(multiFireBallPrefab, transform.position, rot);
             }
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.2f);
         }
 
     }
 
     IEnumerator firstAttack() {
+        burstStreamPrefab.GetComponent<BurstStream>().set(1f, 0.08f, 50f);
         yield return new WaitForSeconds(1f);
-        Instantiate(burstStreamPrafab, new Vector2(7f, 1f), Quaternion.Euler(0f, 0f, 90f));
+        Instantiate(burstStreamPrefab, new Vector2(8f, 1f), Quaternion.Euler(0f, 0f, 90f));
     }
 
     Quaternion direction()

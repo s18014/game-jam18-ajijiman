@@ -447,11 +447,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4303272594648624, guid: 55c9cb2f54f1e4675bb6005edc9ead3d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4303272594648624, guid: 55c9cb2f54f1e4675bb6005edc9ead3d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4303272594648624, guid: 55c9cb2f54f1e4675bb6005edc9ead3d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1468,6 +1468,34 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1190816614}
   m_CullTransparentMesh: 0
+--- !u!1 &1274952546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1274952547}
+  m_Layer: 0
+  m_Name: AngryAttackPattern4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1274952547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1274952546}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1280320075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2074,7 +2102,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1016408585
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 84ae7caf5a3db4207a4527e0a857a3c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2136,7 +2164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1649703625
 Transform:
   m_ObjectHideFlags: 0
@@ -2384,7 +2412,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1267595859
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d655242fa42a5c846a2f9b8fb29756ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2425,7 +2453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1794516831}
   - component: {fileID: 1794516832}
-  m_Layer: 12
+  m_Layer: 5
   m_Name: HitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2477,8 +2505,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1768639223
-  m_SortingLayer: 3
+  m_SortingLayerID: 1597693297
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0, g: 1, b: 0, a: 1}

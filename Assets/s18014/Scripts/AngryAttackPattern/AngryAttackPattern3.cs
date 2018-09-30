@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class AngryAttackPattern3 : MonoBehaviour {
     public GameObject fireWallPrefab;
-    public GameObject burstStreamPrafab;
-    Animator dragonAnime;
+    public GameObject burstStreamPrefab;
 
 
     // Use this for initialization
     private void Awake()
     {
-        dragonAnime = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
         setFireWall();
     }
 
@@ -26,6 +24,7 @@ public class AngryAttackPattern3 : MonoBehaviour {
 
     private void OnEnable()
     {
+        burstStreamPrefab.GetComponent<BurstStream>().set(1f, 0.08f, 50f);
         StartCoroutine("firstAttack");
         StartCoroutine("attack");
         StartCoroutine("fireWallAttack");
@@ -41,10 +40,14 @@ public class AngryAttackPattern3 : MonoBehaviour {
     {
         yield return new WaitForSeconds(4f);
         while (isActiveAndEnabled) {
-            Instantiate(burstStreamPrafab, new Vector2(7f, 2.5f), Quaternion.Euler(0f, 0f, 90f));
+            Instantiate(burstStreamPrefab, new Vector2(7f, 3.3f), Quaternion.Euler(0f, 0f, 90f));
+            Instantiate(burstStreamPrefab, new Vector2(7f, 2.3f), Quaternion.Euler(0f, 0f, 90f));
+            Instantiate(burstStreamPrefab, new Vector2(7f, 1.3f), Quaternion.Euler(0f, 0f, 90f));
             yield return new WaitForSeconds(2.5f);
 
-            Instantiate(burstStreamPrafab, new Vector2(7f, -1.5f), Quaternion.Euler(0f, 0f, 90f));
+            Instantiate(burstStreamPrefab, new Vector2(7f, -3.3f), Quaternion.Euler(0f, 0f, 90f));
+            Instantiate(burstStreamPrefab, new Vector2(7f, -2.3f), Quaternion.Euler(0f, 0f, 90f));
+            Instantiate(burstStreamPrefab, new Vector2(7f, -1.3f), Quaternion.Euler(0f, 0f, 90f));
             yield return new WaitForSeconds(2.5f);
         }
     }
@@ -61,10 +64,12 @@ public class AngryAttackPattern3 : MonoBehaviour {
 
     IEnumerator firstAttack() {
         yield return new WaitForSeconds(1f);
-        Instantiate(burstStreamPrafab, new Vector2(7f, 3.3f), Quaternion.Euler(0f, 0f, 90f));
-        Instantiate(burstStreamPrafab, new Vector2(7f, -3.3f), Quaternion.Euler(0f, 0f, 90f));
-        yield return new WaitForSeconds(1.3f);
-        Instantiate(burstStreamPrafab, new Vector2(7f, 0f), Quaternion.Euler(0f, 0f, 90f));
+        Instantiate(burstStreamPrefab, new Vector2(7f, 4.5f), Quaternion.Euler(0f, 0f, 90f));
+        Instantiate(burstStreamPrefab, new Vector2(7f, 2.5f), Quaternion.Euler(0f, 0f, 90f));
+        Instantiate(burstStreamPrefab, new Vector2(7f, -4.5f), Quaternion.Euler(0f, 0f, 90f));
+        Instantiate(burstStreamPrefab, new Vector2(7f, -2.5f), Quaternion.Euler(0f, 0f, 90f));
+        yield return new WaitForSeconds(1.4f);
+        Instantiate(burstStreamPrefab, new Vector2(7f, 0f), Quaternion.Euler(0f, 0f, 90f));
     }
 
 
@@ -73,5 +78,4 @@ public class AngryAttackPattern3 : MonoBehaviour {
         FireWall fireWall = fireWallPrefab.GetComponent<FireWall>();
         fireWall.bulletNum = 20;
     }
-
 }

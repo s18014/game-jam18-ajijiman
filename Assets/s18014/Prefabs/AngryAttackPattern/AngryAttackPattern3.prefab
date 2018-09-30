@@ -53,5 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireWallPrefab: {fileID: 1974676369829958, guid: 2215c397dfee340eeb8bec39711f2579,
     type: 2}
-  burstStreamPrafab: {fileID: 1540249722833610, guid: ed66b3065d02b47c4a238f351ebbc00e,
+  burstStreamPrefab: {fileID: 1540249722833610, guid: ed66b3065d02b47c4a238f351ebbc00e,
     type: 2}
