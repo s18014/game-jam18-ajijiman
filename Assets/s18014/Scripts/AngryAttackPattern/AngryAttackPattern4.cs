@@ -6,10 +6,12 @@ public class AngryAttackPattern4 : MonoBehaviour {
     public GameObject burstStreamPrefab;
     public GameObject finalAttackPrefab;
     GameObject player;
+    Dragon dragon;
     // Use this for initialization
     private void Awake()
     {
         player = GameObject.FindWithTag("Player");
+        dragon = GameObject.FindWithTag("Enemy").GetComponent<Dragon>();
     }
 
     void Start () {
@@ -18,7 +20,7 @@ public class AngryAttackPattern4 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        dragon.angryPoint = 100f;
 	}
 
     private void OnEnable()
@@ -122,6 +124,11 @@ public class AngryAttackPattern4 : MonoBehaviour {
         yield return new WaitForSeconds(0.8f);
 
         Instantiate(finalAttackPrefab);
+
+        yield return new WaitForSeconds(10f);
+
+        dragon.angryPoint = 0;
+        dragon.isTired = true;
     }
 
     Quaternion direction(Vector2 position)

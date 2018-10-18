@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackPatternManager : MonoBehaviour {
     GameObject[] attackPatterns;
     Dragon dragon;
+    Animator dragonAnim;
 
     // Use this for initialization
     private void Awake()
@@ -18,12 +19,24 @@ public class AttackPatternManager : MonoBehaviour {
 
     void Start () {
         dragon = GameObject.FindWithTag("Enemy").GetComponent<Dragon>();
+        dragonAnim = GameObject.FindWithTag("Enemy").GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update () {
         if (dragon.isAngry) swichingAngryPattern(); else swichingPattern();
-	}
+        if (dragon.isTired)
+        {
+            dragon.angryPoint -= 100f * Time.deltaTime;
+            if (dragon.angryPoint < 0f) dragon.angryPoint = 0f;
+        }
+        if (dragon.hungryPoint <= 0f) {
+            setInactive();
+            enabled = false;
+            dragonAnim.SetBool("isSleep", true);
+        }
+
+    }
 
     void setInactive () {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("EnemyBullet");
@@ -38,6 +51,14 @@ public class AttackPatternManager : MonoBehaviour {
 
 
     void swichingPattern() {
+        if (dragon.isTired) {
+            if (!attackPatterns[8].activeSelf) {
+                setInactive();
+                attackPatterns[8].SetActive(true);
+                dragon.angryPoint = 0f;
+            }
+            return;
+        }
         float ratio = dragon.hungryPoint / dragon.maxHungryPoint;
         if (ratio > 0.8) {
             if (!attackPatterns[0].activeSelf) {
@@ -87,6 +108,14 @@ public class AttackPatternManager : MonoBehaviour {
                 setInactive();
                 attackPatterns[6].SetActive(true);
 
+            }
+        }
+        else if (dragon.angryCount == 4)
+        {
+            if (!attackPatterns[7].activeSelf)
+            {
+                setInactive();
+                attackPatterns[7].SetActive(true);
             }
         }
     }

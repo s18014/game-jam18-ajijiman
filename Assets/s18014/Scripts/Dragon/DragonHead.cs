@@ -21,7 +21,7 @@ public class DragonHead : MonoBehaviour {
         if (other.gameObject.tag == "PlayerBullet") {
             AudioSource.PlayClipAtPoint(audioClip, transform.position);
             if (dragon.isAngry) {
-                dragon.angryPoint -= other.gameObject.GetComponent<Bullet>().power * 0.2f;
+                dragon.angryPoint -= other.gameObject.GetComponent<Bullet>().power * 0.3f;
                 if (dragon.angryPoint > dragon.maxAngryPoint) dragon.angryPoint = dragon.maxAngryPoint;
                 if (dragon.angryPoint < 0f) dragon.angryPoint = 0f;
                 Destroy(other.gameObject);

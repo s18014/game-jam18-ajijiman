@@ -3,21 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameController : MonoBehaviour {
-    GameObject player;
-    GameObject dragon;
+    Player player;
+    Dragon dragon;
+    bool isGameClear = false;
+    bool isGameOver = false;
 
 	// Use this for initialization
 	void Start () {
-        player = GameObject.Find("Player");
+        player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        dragon = GameObject.FindWithTag("Enemy").GetComponent<Dragon>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        checkGameStatus();
 	}
 
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        Debug.Log(other.gameObject.tag);
+    void checkGameStatus () {
+        if (dragon.hungryPoint <= 0f) {
+            isGameClear = true;
+        } else if (player.hp <= 0) {
+            isGameOver = true;
+        }
     }
 }

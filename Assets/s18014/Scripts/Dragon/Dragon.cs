@@ -8,6 +8,7 @@ public class Dragon : MonoBehaviour {
     public float maxAngryPoint;
     public float angryPoint;
     public bool isAngry;
+    public bool isTired;
     public int angryCount;
     public GameObject burnEffectPrefab;
     Animator animator;
