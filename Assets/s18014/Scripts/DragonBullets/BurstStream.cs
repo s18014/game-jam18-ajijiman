@@ -16,7 +16,7 @@ public class BurstStream : MonoBehaviour {
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = audioClips[0];
-        AudioSource.PlayClipAtPoint(audioClips[0], transform.position, 500f);
+        AudioSource.PlayClipAtPoint(audioClips[0], Vector2.zero);
         bullet = GetComponent<Bullet>();
         time += deray;
         StartCoroutine("shot");
@@ -32,7 +32,7 @@ public class BurstStream : MonoBehaviour {
     {
         yield return new WaitForSeconds(deray);
         audioSource.clip = audioClips[1];
-        AudioSource.PlayClipAtPoint(audioClips[1], transform.position);
+        AudioSource.PlayClipAtPoint(audioClips[1], Vector2.zero);
         while (true)
         {
             Instantiate(burstFirePrefab, transform.position, transform.rotation);

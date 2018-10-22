@@ -11,10 +11,14 @@ public class Dragon : MonoBehaviour {
     public bool isTired;
     public int angryCount;
     public GameObject burnEffectPrefab;
+    public AudioClip dragonScreemSE;
+    public AudioClip dragonExprosionSE;
+    private AudioSource audioSource;
     Animator animator;
 
 	// Use this for initialization
 	void Start () {
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         hungryPoint = maxHungryPoint;
         angryPoint = 0f;
@@ -28,6 +32,8 @@ public class Dragon : MonoBehaviour {
 
     void checkAngry () {
         if (angryPoint >= maxAngryPoint && !isAngry) {
+            audioSource.PlayOneShot(dragonScreemSE);
+            AudioSource.PlayClipAtPoint(dragonExprosionSE, Vector2.zero);
             isAngry = true;
             angryCount += 1;
             animator.SetBool("isAngry", true);
@@ -41,5 +47,10 @@ public class Dragon : MonoBehaviour {
             animator.SetBool("isAngry", false);
             angryPoint = 0f;
         }
+    }
+
+    public void playSleepSound() {
+        audioSource.pitch = 0.5f;
+        audioSource.PlayOneShot(dragonScreemSE);
     }
 }

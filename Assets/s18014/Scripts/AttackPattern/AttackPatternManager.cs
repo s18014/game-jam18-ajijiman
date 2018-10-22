@@ -34,6 +34,7 @@ public class AttackPatternManager : MonoBehaviour {
             setInactive();
             enabled = false;
             dragonAnim.SetBool("isSleep", true);
+            dragon.playSleepSound();
         }
 
     }

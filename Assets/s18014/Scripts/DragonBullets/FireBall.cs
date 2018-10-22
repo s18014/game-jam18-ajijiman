@@ -7,6 +7,7 @@ public class FireBall : MonoBehaviour {
     float speed;
     public float angle;
     Rigidbody2D rig;
+    public AudioClip shotSE;
 
     // Use this for initialization
     void Start () {;
@@ -33,6 +34,7 @@ public class FireBall : MonoBehaviour {
         rig.velocity = direction * speed;
 
         transform.rotation = Quaternion.Euler(0, 0, newRot + angle);
+        AudioSource.PlayClipAtPoint(shotSE, Vector2.zero);
     }
 
 }

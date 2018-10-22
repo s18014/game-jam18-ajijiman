@@ -7,6 +7,7 @@ public class FireBreathGenerator : MonoBehaviour {
     public GameObject fireBreathPrefab;
     public float angle;
     public int bulletNum;
+    public AudioClip shotSE;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,7 @@ public class FireBreathGenerator : MonoBehaviour {
 
     IEnumerator shot () {
         for (int i = 0; i < bulletNum; i++) {
+            AudioSource.PlayClipAtPoint(shotSE, Vector2.zero);
             Instantiate(fireBreathPrefab, transform.position, transform.rotation);
             transform.Rotate(new Vector3(0, 0, angle));
             yield return new WaitForSeconds(bullet.deray);

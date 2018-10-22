@@ -44,7 +44,7 @@ public class AttackPattern4 : MonoBehaviour {
             // first attack
             dragonAnime.SetTrigger("Attack");
             set(30f, 12);
-            for (int i = 0; i < 15; i++)
+            for (int i = 0; i < 10; i++)
             {
                 yield return new WaitForSeconds(0.3f);
                 Instantiate(multiFireBallPrefab, transform.position, Quaternion.Euler(0f, 0f, objAngle));

@@ -41,7 +41,7 @@ public class BulletManager : MonoBehaviour {
                 isAttackable[equip] = false;
                 lapTimes[equip] = 0f;
                 animator.SetTrigger("Throw");
-                AudioSource.PlayClipAtPoint(audioClips[0], transform.position);
+                AudioSource.PlayClipAtPoint(audioClips[0], Vector2.zero);
             }
         }
     }

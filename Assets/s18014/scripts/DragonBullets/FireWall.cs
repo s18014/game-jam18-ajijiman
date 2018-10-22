@@ -5,6 +5,7 @@ using UnityEngine;
 public class FireWall : MonoBehaviour {
     public int bulletNum;
     public GameObject derayFireBallPrafab;
+    public AudioClip shotSE;
     Bullet bullet;
     Vector2 min;
     Vector2 max;
@@ -33,6 +34,7 @@ public class FireWall : MonoBehaviour {
             pos.y = max.y - massY * Random.Range(0, 5) - massY / 2f;
             pos.x = max.x - massX * Random.Range(0f, 3f);
             Instantiate(derayFireBallPrafab, pos, Quaternion.identity);
+            AudioSource.PlayClipAtPoint(shotSE, Vector2.zero);
             yield return new WaitForSeconds(bullet.deray);
         }
 
