@@ -2521,6 +2521,8 @@ MonoBehaviour:
   angryCount: 0
   burnEffectPrefab: {fileID: 1197922175744552, guid: 08535273824af4b5488252f99641f7a7,
     type: 2}
+  dragonScreemSE: {fileID: 8300000, guid: 88339a1d871a940cfa3b0bb2d62f5823, type: 3}
+  dragonExprosionSE: {fileID: 8300000, guid: 0fe4aae7a976245a88e320b40f1bdb1e, type: 3}
 --- !u!82 &1722639057
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2530,7 +2532,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 88339a1d871a940cfa3b0bb2d62f5823, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1

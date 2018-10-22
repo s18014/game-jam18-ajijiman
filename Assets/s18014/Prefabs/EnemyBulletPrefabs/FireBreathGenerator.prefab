@@ -69,5 +69,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireBreathPrefab: {fileID: 1555568655534570, guid: e2db5544a47fe4db99d87f5cd6907b31,
     type: 2}
-  time: 1
-  endAngle: 180
+  angle: -5
+  bulletNum: 38
+  shotSE: {fileID: 8300000, guid: 0fe4aae7a976245a88e320b40f1bdb1e, type: 3}

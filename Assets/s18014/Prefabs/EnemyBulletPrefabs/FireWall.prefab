@@ -55,6 +55,7 @@ MonoBehaviour:
   bulletNum: 20
   derayFireBallPrafab: {fileID: 1983342086321420, guid: 0e3a095a723ac4155b15e1385235701f,
     type: 2}
+  shotSE: {fileID: 8300000, guid: 36db2e3c8297d48d7833c2fe00891fd0, type: 3}
 --- !u!114 &114689249938017562
 MonoBehaviour:
   m_ObjectHideFlags: 1
