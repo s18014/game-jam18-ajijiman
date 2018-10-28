@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AttackPatternManager : MonoBehaviour {
     GameObject[] attackPatterns;
+    public GameObject futonPrefab;
     Dragon dragon;
     Animator dragonAnim;
 
@@ -34,6 +35,7 @@ public class AttackPatternManager : MonoBehaviour {
             setInactive();
             enabled = false;
             dragonAnim.SetBool("isSleep", true);
+            Instantiate(futonPrefab);
             dragon.playSleepSound();
         }
 
