@@ -2591,7 +2591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHungryPoint: 1000
-  hungryPoint: 0
+  hungryPoint: 1000
   maxAngryPoint: 100
   angryPoint: 0
   isAngry: 0
